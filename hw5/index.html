@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>1</h2>
+
+    <form>
+        <select id="options" onchange="showoptions()">
+            <option value="coffee">coffee</option>
+            <option value="tea">tea</option>
+            <option value="juice">juice</option>
+        </select>
+    </form>
+
+    <h2>2</h2>
+
+    <input type="text" id="weekday" placeholder="day of the week">      
+    <button onclick="checkDays()">Check day!</button>
+
+    <h2>3</h2>
+
+    <input type="text" id="month" placeholder="month">      
+    <button onclick="checkMonth()">Check month!</button>
+
+    <h2>4</h2>
+
+    <input type="text" id="monthday" placeholder="Enter month!">
+    <button onclick="monthDay()">Check days!</button>
+
+    <h2>5</h2>
+
+    <input type="text" id="color" placeholder="Enter color!">
+    <button onclick="color()">Traffic lights!</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
