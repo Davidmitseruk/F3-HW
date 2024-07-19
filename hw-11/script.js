@@ -44,10 +44,25 @@ function withdraw(){
     }
 }
 // 2
-
+    const wheater = {
+        temperature: 12,
+        humidity: 10,
+        windSpeed: 23,
+    }
+    if (wheater.temperature < 0){
+        console.log(true);
+    } else {
+        console.log(false);
+    }
 
 
 // 3
+    const user = {
+        name: 'David',
+        email:'david@email.com',
+        
+
+    }
 
 // 4
 
