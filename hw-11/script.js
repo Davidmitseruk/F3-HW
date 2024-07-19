@@ -60,8 +60,18 @@ function withdraw(){
     const user = {
         name: 'David',
         email:'david@email.com',
-        
+        password: 'password'
+    }
+    
+    function login(){
+        const email = document.getElementById(email);
+        const password = document.getElementById(password);
 
+        if(!email.includes(email)){
+            alert('wrong email');
+        } else(
+            alert('boo')
+        )
     }
 
 // 4
