@@ -90,3 +90,26 @@ const users=[
     console.log(names) // ['Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony']
 
     // 2 
+
+    console.log(users.filter(user => user.eyeColor === "blue")); // [Moore Hensley], [Sharlene Bush], [Carey Barr]
+
+    //3
+
+    console.log(users.filter(user => user.gender === "male"));
+
+    // 4
+    
+    console.log(users.filter(user => !user.isActive));
+
+    //5 
+
+    console.log(users.find(user => user.email === "shereeanthony@kog.com"));
+    console.log(users.find(user => user.email === "elmahead@omatom.com"));
+
+    //6
+
+console.log(users.filter(user => user.age < 30 && user.age  > 20));
+console.log(users.filter(user => user.age < 40 && user.age  > 30));
+
+
+
