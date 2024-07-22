@@ -57,22 +57,25 @@ function withdraw(){
 
 
 // 3
-    const user = {
-        name: 'David',
-        email:'david@email.com',
-        password: 'password'
-    }
-    
-    function login(){
-        const email = document.getElementById(email);
-        const password = document.getElementById(password);
 
-        if(!email.includes(email)){
-            alert('wrong email');
-        } else(
-            alert('boo')
-        )
+let enteredEmail = prompt("Введіть пошту");
+let enteredPassword = prompt("Введіть пароль");
+
+const user = {
+  name: "David",
+  email: "David@email.com", 
+  password: "password",
+  login: function (email, password) {
+    if (email === this.email && password === this.password) {
+      alert("Логін успішний!");
+    } else {
+      alert("Неправильний email або пароль.");
     }
+  },
+};
+
+user.login(enteredEmail, enteredPassword);
+
 
 // 4
 
