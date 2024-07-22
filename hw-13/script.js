@@ -111,34 +111,15 @@ const Transaction = {
 
 
 
-const Transactions = {
-  DEPOSIT: 'deposit',
-  WITHDRAW: 'withdraw',
-};
-
-
-
-const accounts = {
- 
-  balance: 0,
-
-
-  transactions: [],
-
+const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроїд", price: 400, quantity: 7 },
+    { name: "Захоплення", price: 1200, quantity: 2 },
+  ];
   
-  createTransaction(amount, type) {},
-
-  deposit(amount) {},
-
- 
-  withdraw(amount) {},
-
- 
-  getBalance() {},
-
+  const [product1, product2, product3, product4] = products;
+  const { name: name1, price: price1, quantity: quantity1 } = product1;const { name: name2, price: price2, quantity: quantity2 } = product2;
+  const { name: name3, price: price3, quantity: quantity3 } = product3;const { name: name4, price: price4, quantity: quantity4 } = product4;
   
-  getTransactionDetails(id) {},
-
- 
-  getTransactionTotal(type) {},
-};
+  console.log(name2, price2, quantity2);
