@@ -92,32 +92,34 @@ const users=[
 
     //2
 
-    console.log(users.filter(user => user.friends = "Briana Decker"));
+    const getUsersWithFriend = (users, friendName) => {  return users.reduce((result, user) => {
+      if (user.friends.some((friend) => friend === friendName)) {      result.push(user.name);
+      }
+      return result;  }, []);
+  };
+  console.log(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+  console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
       
     //3
-    const skills = users.map(user => user.skills);
-    skills.sort((a, b) => {
-      if(a.skills < b.skills){
-        return -1;
-      }
-      if( a.skills > b.skills){
-        return 1;
-      }
-      return 0;
-    })
-    console.log(users);  
-    console.log(skills)
+    const copyUsers = [...users];
+    const getNamesSortedByFriendsCount = (users) => {
+      return users    .sort((a, b) => a.friends.length - b.friends.length)
+        .map((user) => user.name);
+    };
+    console.log(getNamesSortedByFriendsCount(copyUsers));
 
     //4
 
     
-    users.sort((a, b) => {
-      if(a.skills < b.skills){
-        return -1;
-      }
-      if( a.skills > b.skills){
-        return 1;
-      }
-      return 0;
-    })
-    console.log(users);  
+    const getSortedUniqueSkills = (users) => {
+      return users.reduce((allSkills, user) => {
+        user.skills.forEach((skill) => {
+          if (!allSkills.includes(skill)) {
+            allSkills.push(skill);
+          }
+        });
+        return allSkills;
+      }, [])
+      .sort();
+    };
+    console.log(getSortedUniqueSkills(users));
