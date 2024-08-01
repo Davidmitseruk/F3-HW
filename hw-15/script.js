@@ -92,6 +92,32 @@ const users=[
 
     //2
 
-    console.log(users.filter(user => user.friends == "Briana Decker"));
-       
+    console.log(users.filter(user => user.friends = "Briana Decker"));
+      
+    //3
+    const skills = users.map(user => user.skills);
+    skills.sort((a, b) => {
+      if(a.skills < b.skills){
+        return -1;
+      }
+      if( a.skills > b.skills){
+        return 1;
+      }
+      return 0;
+    })
+    console.log(users);  
+    console.log(skills)
+
+    //4
+
     
+    users.sort((a, b) => {
+      if(a.skills < b.skills){
+        return -1;
+      }
+      if( a.skills > b.skills){
+        return 1;
+      }
+      return 0;
+    })
+    console.log(users);  
