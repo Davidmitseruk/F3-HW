@@ -54,3 +54,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//2
+document.addEventListener('DOMContentLoaded', () => {
+  const controls = document.getElementById('controls');
+  const input = controls.querySelector('input[type="number"]');
+  const renderButton = controls.querySelector('button[data-action="render"]');
+  const destroyButton = controls.querySelector('button[data-action="destroy"]');
+  const boxesContainer = document.getElementById('boxes');
+
+  // Функція для створення випадкового кольору
+  function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return rgb(${r}, ${g}, ${b});
+  }
+
+  // Функція для створення div елементів
+  function createBoxes(amount) {
+    // Очистимо контейнер перед створенням нових елементів
+    boxesContainer.innerHTML = '';
+
+    let boxSize = 30; // Початковий розмір першого div
+
+    for (let i = 0; i < amount; i++) {
+      const box = document.createElement('div');
+      box.style.width = ${boxSize}px;
+      box.style.height = ${boxSize}px;
+      box.style.backgroundColor = getRandomColor();
+      box.style.margin = '5px'; // Додатковий стиль для проміжку між div
+      boxesContainer.appendChild(box);
+      boxSize += 10; // Збільшення розміру для наступного div
+    }
+  }
+
+  // Функція для очищення div#boxes
+  function destroyBoxes() {
+    boxesContainer.innerHTML = '';
+  }
+
+  // Додавання обробників подій
+  renderButton.addEventListener('click', () => {
+    const amount = parseInt(input.value, 10);
+    if (amount > 0) {
+      createBoxes(amount);
+    }
+  });
+
+  destroyButton.addEventListener('click', destroyBoxes);
+});
